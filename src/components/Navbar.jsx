@@ -65,7 +65,23 @@ export default function Navbar() {
                     </div>
 
                     <div className="navbar-cta" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                        <button onClick={toggleTheme} style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <button
+                            onClick={toggleTheme}
+                             style={{
+                                background: 'transparent',
+                                border: 'none',
+                                color: 'var(--text-primary)',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                padding: '8px',
+                                borderRadius: '50%',
+                                transition: 'background 0.3s ease'
+                            }}
+                            aria-label="Toggle theme"
+                            className="desktop-theme-toggle"
+                        >
                             {isDark ? <Sun size={20} /> : <Moon size={20} />}
                         </button>
                         <motion.a
@@ -80,9 +96,6 @@ export default function Navbar() {
                     </div>
 
                     <div className="mobile-menu-btn">
-                        <button onClick={toggleTheme} style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', display: 'flex' }}>
-                            {isDark ? <Sun size={20} /> : <Moon size={20} />}
-                        </button>
                         <button
                             onClick={() => setMenuOpen(true)}
                             aria-label="Open menu"
@@ -102,6 +115,7 @@ export default function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
+                        style={{ height: '100vh', width: '100vw' }}
                     >
                         <button
                             className="mobile-close"

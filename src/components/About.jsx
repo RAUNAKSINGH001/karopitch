@@ -22,6 +22,11 @@ export default function About() {
             title: 'Investor Matching',
             desc: 'Smart matching with investors aligned to your specific sector and stage',
         },
+        {
+            icon: <Rocket size={20} />,
+            title: 'Rapid Scaling',
+            desc: 'Get access to strategic guidance and resources to accelerate your growth',
+        },
     ]
 
     const metrics = [
@@ -40,8 +45,8 @@ export default function About() {
     return (
         <section className="about" id="about" ref={ref}>
             <div className="container">
-                <div className="about-grid">
-                    <motion.div className="about-content" {...fadeUp(0)}>
+                <div className="about-grid" style={{ alignItems: 'stretch' }}>
+                    <motion.div className="about-content" {...fadeUp(0)} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                         <div className="section-badge">
                             <Zap /> About Karo Pitch
                         </div>
@@ -60,7 +65,7 @@ export default function About() {
                             no matter where you&apos;re building from.
                         </p>
 
-                        <div className="about-features" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px', marginTop: '32px' }}>
+                        <div className="about-features" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px', marginTop: 'auto', paddingTop: '32px' }}>
                             {features.map((f, i) => (
                                 <motion.div
                                     key={i}
@@ -83,7 +88,7 @@ export default function About() {
                         </div>
                     </motion.div>
 
-                    <motion.div className="about-visual" {...fadeUp(0.2)} style={{ width: '100%', maxWidth: '460px', margin: '0 auto', alignSelf: 'flex-start' }}>
+                    <motion.div className="about-visual" {...fadeUp(0.2)} style={{ width: '100%', maxWidth: '460px', margin: '0 0 0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
                         <SpotlightCard style={{ padding: '40px' }}>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
                                 {metrics.map((m, i) => (
@@ -112,7 +117,7 @@ export default function About() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.8, duration: 0.6 }}
-                            style={{ marginTop: '24px' }}
+                            style={{ marginTop: '16px' }}
                         >
                             <SpotlightCard style={{ padding: '24px', display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
                                 <div style={{ color: 'var(--primary-light)', padding: '12px', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', flexShrink: 0, border: '1px solid rgba(255,255,255,0.05)' }}>

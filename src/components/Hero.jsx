@@ -45,8 +45,7 @@ export default function Hero() {
         offset: ["start start", "end start"]
     })
 
-    const y = useTransform(scrollYProgress, [0, 1], [0, 150])
-    const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
+    const y = useTransform(scrollYProgress, [0, 1], [0, 60])
 
     const staggerObj = {
         hidden: { opacity: 0 },
@@ -66,7 +65,7 @@ export default function Hero() {
             <div className="container">
                 <motion.div
                     className="hero-grid"
-                    style={{ y, opacity }}
+                    style={{ y }}
                     variants={staggerObj}
                     initial="hidden"
                     animate="show"

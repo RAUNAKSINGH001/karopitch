@@ -322,7 +322,7 @@ a {
   align-items: center;
   padding: 160px 0 100px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 
@@ -835,8 +835,13 @@ a {
   .steps-grid,
   .categories-grid,
   .startups-grid,
-  .footer-grid {
-    grid-template-columns: 1fr;
+  .footer-grid,
+  .about-ks-content .about-ks-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-ks-visual {
+    grid-template-columns: 1fr !important;
   }
 
   .footer-bottom {
@@ -848,4 +853,51 @@ a {
   .hero-content h1 {
     font-size: 2.5rem;
   }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* MOBILE MENU STYLES */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-primary);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 24px;
+}
+
+.mobile-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  padding: 8px;
+}
+
+.mobile-menu a {
+  font-size: 1.5rem;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.mobile-menu .btn {
+  margin-top: 24px;
+  font-size: 1.1rem;
 }
