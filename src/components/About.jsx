@@ -9,7 +9,7 @@ export default function About() {
     const features = [
         {
             icon: <Zap size={20} />,
-            title: 'Curated Pitch Events',
+            title: 'Curated Pitch Events ',
             desc: 'Structured pitch sessions with real investors actively deploying capital',
         },
         {
